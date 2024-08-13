@@ -42,17 +42,20 @@ function App() {
                 const randomRow = data.items[randomIndex];
                 setLat(randomRow.latlng[0]);
                 setLng(randomRow.latlng[1]);
+                setZoom(9);
                 setCountryName(`${randomRow?.name?.official ?? ""} row ${randomIndex + 1}`);
                 setShowMap(true);
             }
         } catch (error) {
             toast.error('Error, check console logs for details');
-            console.error(error.message);
+            const detail = error as unknown as Error;
+            console.error(detail.message);
         }
     };
 
     useEffect(() => {
         if (map.current) {
+            // @ts-ignore
             map.current.flyTo({
                 center: [lng,  lat],
                 essential: true
@@ -60,7 +63,9 @@ function App() {
             return; // initialize map only once
         }
 
+        // @ts-ignore
         map.current = new mapboxgl.Map({
+            // @ts-ignore
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/streets-v12',
             center: [lng, lat],
