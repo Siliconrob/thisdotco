@@ -2,7 +2,7 @@
 import {SearchType} from "./SearchType.tsx";
 
 export function getSearchUrl(selectedSearchParams: SearchSelection): string {
-    let searchUrl = import.meta.env.VITE_APP_API_URL;
+    let searchUrl = selectedSearchParams.ApiUrl as unknown as string;
     const routePath = selectedSearchParams.EndPoint as unknown as string;
     searchUrl = `${searchUrl}/${routePath}`;
     if (selectedSearchParams.Type === SearchType.Id) {

@@ -8,6 +8,7 @@ import {SearchType} from "./SearchType.tsx";
 import {EndPoints} from "./EndPoints.tsx";
 import {SearchSelection} from "./SearchSelection.tsx";
 import {getSearchUrl} from "./GetSearchUrl.tsx";
+import {API} from "./API.tsx";
 
 mapboxgl.accessToken = import.meta.env.VITE_APP_MAPBOX_TOKEN;
 
@@ -80,6 +81,15 @@ function App() {
             <div className="card">
                 <div className="row">
                     <select className="pad-items" onChange={(e) => {
+                        searchInput.ApiUrl = e.target.value as unknown as API;
+                        setSearchInput(searchInput);
+                    }}>
+                        <option value={API.PYTHON}>{API.PYTHON}</option>
+                        <option value={API.NET}>{API.NET}</option>
+                    </select>
+                </div>
+                <div className="row">
+                <select className="pad-items" onChange={(e) => {
                         searchInput.EndPoint = e.target.value as unknown as EndPoints;
                         setSearchInput(searchInput);
                     }}>
