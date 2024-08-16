@@ -34,7 +34,7 @@ VITE_APP_API_NET_URL=<Url to ServiceStack API> clone this https://github.com/Sil
 
 ## Render Deployment
 
-- Signup for a free [Render](https://dashboard.render.com/register) account.  You won't regrest it :)
+- Signup for a free [Render](https://dashboard.render.com/register) account.  You won't regret it :)
 - Connect your [GitHub](https://docs.render.com/github) account
 - Choose the `Static Site` [option](https://docs.render.com/static-sites)
 - Setup a name
@@ -44,3 +44,7 @@ VITE_APP_API_NET_URL=<Url to ServiceStack API> clone this https://github.com/Sil
 
 ### !!REMEMBER!!
 - Make sure you setup your accompanying Python and .NET APIs
+
+Example render setup
+![image](https://github.com/user-attachments/assets/2203eaa5-c025-47eb-ae3a-d3c7fe1fe35a)
+
